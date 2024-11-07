@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+    stages{
+        stage("Cloning"){
+            steps{
+                git clone https://github.com/FreeCodeCamp-Solutions/Product-Landing-Page.git
+            }
+        }
+        stage("Docker Build"){
+            steps{
+                sh "docker build -t myapp:1.0 ."
+            }
+        }
+    }
+
+}
